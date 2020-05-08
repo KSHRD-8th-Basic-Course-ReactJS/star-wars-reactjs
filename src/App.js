@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Character from "./components/Character/Character";
+import CharacterPicker from "./components/CharacterPicker/CharacterPicker";
+import SideChooser from "./components/SideChooser/SideChooser/SideChooser";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      selectedCharacter: 1,
+      side: "light",
+      destroyed: false,
+    };
+  }
+
+  onCharacterSelect = (e) => {
+    const charId = e.target.value;
+    this.setState({ selectedCharacter: charId });
+  };
+
+  sideHandler = side => {
+    this.setState({ side: side });
+  };
+
+  destructionHandler = () => {
+    this.setState({ destroyed: true });
+  };
+
+  render() {
+    let content = (
+      <div className="container">
+        <CharacterPicker
+          onCharacterSelect={this.onCharacterSelect}
+          selectedChar={this.state.selectedCharacter}
+          side={this.state.side}
+        />
+        <Character
+          selectedChar={this.state.selectedCharacter}
+        />
+        <SideChooser 
+          sideHandler={this.sideHandler}
+          destructionHandler={this.destructionHandler}
+          side={this.state.side}
+        />
+      </div>
+    );
+    if(this.state.destroyed) {
+      content = <h1>Total Destruction</h1>
+    }
+    return content
+  }
 }
 
 export default App;
