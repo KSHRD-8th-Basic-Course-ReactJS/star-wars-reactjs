@@ -5,7 +5,7 @@ export const characters = [
     gender: "Male",
     height: "172",
     hairColor: "Blond",
-    skinColor: "Fair",
+    skinColor: "White",
     movieCount: 5
   },
   {

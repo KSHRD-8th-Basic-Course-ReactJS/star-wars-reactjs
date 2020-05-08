@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  characters
-} from '../../data/characters'
+import { characters } from "../../data/characters";
 
 class CharacterPicker extends React.Component {
   constructor(props) {
@@ -13,20 +11,21 @@ class CharacterPicker extends React.Component {
 
   componentDidMount() {
     this.setState({
-      characters: characters
-    })
+      characters: characters,
+    });
   }
 
   render() {
     return (
-      <div>
+      <div className="margin-tb">
         <select
           name=""
-          id=""
+          id="bg-light"
           onChange={this.props.onCharacterSelect}
           value={this.props.selectedChar}
-          className={this.props.side}
+          className="btn btn-primary p-2"
         >
+          <option value="6">Hello</option>
           {this.state.characters.map((char) => (
             <option key={char.id} value={char.id}>
               {char.name}
@@ -37,4 +36,4 @@ class CharacterPicker extends React.Component {
     );
   }
 }
-export default CharacterPicker
+export default CharacterPicker;

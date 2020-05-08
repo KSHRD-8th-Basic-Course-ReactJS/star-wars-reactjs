@@ -6,7 +6,7 @@ const Character = (props) => {
   const char = characters.find((char) => char.id == props.selectedChar);
   if (char) {
     return (
-      <div className="App">
+      <div className="summary">
         <h1>{char.name}</h1>
         <p>
           Gender: <span className="summary__output">{char.gender}</span>
@@ -16,7 +16,7 @@ const Character = (props) => {
         </p>
         <p>
           Hair Color / Skin Color:{" "}
-          <span className="summary__output">{char.hairColor}</span>{" "}
+          <span className="summary__output">{char.hairColor}</span>{" / "}
           <span className="summary__output">{char.skinColor}</span>
         </p>
         <p>
@@ -30,7 +30,7 @@ const Character = (props) => {
       <div>
         <h1>Invalid Character</h1>
       </div>
-    )
+    );
   }
 };
 

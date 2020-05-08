@@ -1,7 +1,7 @@
 import React from "react";
 import Character from "./components/Character/Character";
 import CharacterPicker from "./components/CharacterPicker/CharacterPicker";
-import SideChooser from "./components/SideChooser/SideChooser/SideChooser";
+import SideChooser from "./components/SideChooser/SideChooser";
 
 class App extends React.Component {
   constructor() {

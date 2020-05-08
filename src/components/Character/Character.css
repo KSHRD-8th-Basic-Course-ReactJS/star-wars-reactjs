@@ -1,9 +1,8 @@
 .summary {
-  border: 1px solid #1a1a1a;
+  border: 3px solid #1a1a1a;
   padding: 1rem;
   margin: 1rem 0;
 }
-
 .summary h1 {
   color: #1a1a1a;
   font-size: 1.5rem;
